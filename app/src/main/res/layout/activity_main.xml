@@ -23,10 +23,9 @@
         app:srcCompat="@drawable/skyfall2" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/travelxView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="asfas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -36,14 +35,13 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/welcomeView"
         android:layout_width="264dp"
         android:layout_height="20dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="asdasd"
         app:layout_constraintBottom_toBottomOf="@+id/skyfall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/skyfall"
@@ -52,14 +50,13 @@
         app:srcCompat="@drawable/welcome" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/futureView"
         android:layout_width="313dp"
         android:layout_height="32dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="qewqe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
@@ -69,14 +66,13 @@
         app:srcCompat="@drawable/tof" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/guideView"
         android:layout_width="344dp"
         android:layout_height="11dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="ferg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +81,7 @@
         app:srcCompat="@drawable/you" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/clickView"
         android:layout_width="241dp"
         android:layout_height="21dp"
         android:layout_marginBottom="8dp"
@@ -97,7 +93,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826"
+        app:layout_constraintVertical_bias="0.835"
         app:srcCompat="@drawable/click" />
 
 </android.support.constraint.ConstraintLayout>

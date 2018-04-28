@@ -1,7 +1,16 @@
 package rhinos.com.travelx_;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,8 +19,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.security.Provider;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private static final int MY_REQUEST_INT = 177;
     private GoogleMap mMap;
 
     @Override
@@ -37,10 +49,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        double lat;
+        double lon;
+        //Enable Current Location:
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION}, MY_REQUEST_INT);
+            return;
+        } else {
+            mMap.setMyLocationEnabled(true);
+            LocationManager manager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            Criteria mCriteria = new Criteria();
+            assert manager != null;
+            String bestProvider = String.valueOf(manager.getBestProvider(mCriteria, true));
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            Location mLocation = manager.getLastKnownLocation(bestProvider);
+            if (mLocation != null) {
+                Log.e("TAG", "GPS is on");
+                final double currentLatitude = mLocation.getLatitude();
+                final double currentLongitude = mLocation.getLongitude();
+                LatLng loc1 = new LatLng(currentLatitude, currentLongitude);
+                mMap.addMarker(new MarkerOptions().position(loc1).title("Your Current Location"));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 15));
+                mMap.animateCamera(CameraUpdateFactory.zoomTo(2), 2000, null);
+            }
+            // Add a marker in Sydney and move the camera
+            //   LatLng sydney = new LatLng(-34, 151);
+            //       mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+            // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney);
+
+        }
     }
 }
