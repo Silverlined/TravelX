@@ -1,14 +1,13 @@
 package rhinos.com.travelx_;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setFullScreen();
 
         ImageView hubbleView = (ImageView) findViewById(R.id.hubble);
-        hubbleView.setOnClickListener(v -> goToSecondActivity());
+        hubbleView.setOnClickListener(v -> goToDestinationActivity());
     }
 
     private void setFullScreen() {
@@ -35,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    private void goToSecondActivity() {
-        Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
+    private void goToDestinationActivity() {
+        Intent startIntent = new Intent(getApplicationContext(), DestinationActivity.class);
         startActivity(startIntent);
     }
 }
