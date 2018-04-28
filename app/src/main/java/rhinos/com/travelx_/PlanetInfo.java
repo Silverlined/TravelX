@@ -1,8 +1,10 @@
 package rhinos.com.travelx_;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 public class PlanetInfo extends AppCompatActivity {
 
@@ -11,6 +13,22 @@ public class PlanetInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planet_info);
         setFullScreen();
+
+        Button learnMoreBtn = findViewById(R.id.learnMoreBtn);
+        Button travelBtn = findViewById(R.id.travelBtn);
+
+        learnMoreBtn.setOnClickListener(v -> goToLearnMoreActivity());
+        travelBtn.setOnClickListener(v -> goToSpaceStationsActivity());
+    }
+
+    private void goToSpaceStationsActivity() {
+        Intent startStations = new Intent(getApplicationContext(), SpaceStations.class);
+        startActivity(startStations);
+    }
+
+    private void goToLearnMoreActivity() {
+        Intent startLearn = new Intent(getApplicationContext(), LearnMoreActivity.class);
+        startActivity(startLearn);
     }
 
     private void setFullScreen() {

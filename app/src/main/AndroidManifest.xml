@@ -39,7 +39,9 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".DestinationActivity" />
-        <activity android:name=".PlanetInfo"></activity>
+        <activity android:name=".PlanetInfo" />
+        <activity android:name=".SpaceStations" />
+        <activity android:name=".LearnMoreActivity"></activity>
     </application>
 
 </manifest>
