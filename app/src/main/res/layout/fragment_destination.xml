@@ -17,23 +17,5 @@
             android:scaleType="center"
             android:src="@drawable/moon" />
 
-        <ImageView
-            android:id="@+id/arrowLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="202dp"
-            android:layout_marginStart="15dp"
-            android:src="@drawable/arrow_left" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/arrowLeft"
-            android:layout_marginEnd="14dp"
-            android:src="@drawable/arrow_right" />
     </RelativeLayout>
 </layout>
