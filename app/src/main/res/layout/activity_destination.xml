@@ -18,7 +18,7 @@
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="Montserrat"
             android:text="CHOOSE A DESTINATION:"
             android:textAlignment="center"
@@ -35,8 +35,8 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="379dp"
-            android:layout_marginTop="130dp">
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp">
 
         </android.support.v4.view.ViewPager>
 
@@ -44,7 +44,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="-> slide to choose"
             android:textAlignment="center"
             android:textColor="#606060"

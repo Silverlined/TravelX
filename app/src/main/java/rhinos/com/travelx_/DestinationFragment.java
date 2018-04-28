@@ -1,6 +1,7 @@
 package rhinos.com.travelx_;
 
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -45,7 +46,13 @@ public class DestinationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.moon.setImageResource(destinationModel.getImage());
+        binding.planet.setImageResource(destinationModel.getImage());
+        binding.planet.setOnClickListener(v -> goToPlanetInfo());
+    }
+
+    private void goToPlanetInfo() {
+        Intent startInfo = new Intent(getActivity(), PlanetInfo.class);
+        startActivity(startInfo);
     }
 
     public static DestinationFragment newInstance(DestinationModel destinationModel) {

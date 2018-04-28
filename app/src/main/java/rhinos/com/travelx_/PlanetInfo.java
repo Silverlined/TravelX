@@ -1,25 +1,16 @@
 package rhinos.com.travelx_;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import rhinos.com.travelx_.databinding.ActivityDestinationBinding;
+public class PlanetInfo extends AppCompatActivity {
 
-public class DestinationActivity extends AppCompatActivity {
-    private ActivityDestinationBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_destination);
-        setupViewPager();
+        setContentView(R.layout.activity_planet_info);
         setFullScreen();
-    }
-
-    private void setupViewPager() {
-        PagerAdapter adapter = new PagerAdapter(this, getSupportFragmentManager());
-        binding.viewPager.setAdapter(adapter);
     }
 
     private void setFullScreen() {

@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setFullScreen();
 
         ImageView skyfall = (ImageView) findViewById(R.id.skyfall);
-        skyfall.setOnClickListener(v -> goToDestinationActivity()   );
+        skyfall.setOnClickListener(v -> goToDestinationActivity());
     }
 
-    private void setFullScreen() {
+     private void setFullScreen() {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE
