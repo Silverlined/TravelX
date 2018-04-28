@@ -10,51 +10,71 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
-        android:layout_height="301dp"
-        app:srcCompat="@drawable/rocket"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="276dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:background="@drawable/round_btn"
-        android:fontFamily="Montserrat"
-        android:text="@string/learn_more"
-        android:textSize="25sp"
-        android:textColor="@color/colorWhite"
+        android:layout_height="129dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/travelBtn"
+        app:srcCompat="@drawable/rocket" />
+
+    <Button
+        android:id="@+id/learnMoreBtn"
+        android:layout_width="171dp"
+        android:layout_height="55dp"
+        android:background="@drawable/round_btn"
+        android:fontFamily="Montserrat-Medium"
+        android:text="@string/learn_more"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.589" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="160dp"
+        android:id="@+id/travelBtn"
+        android:layout_width="171dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/round_btn"
-        android:fontFamily="Montserrat"
+        android:fontFamily="Montserrat-Medium"
         android:text="@string/travel"
-        android:textSize="25sp"
         android:textColor="@color/colorWhite"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintTop_toBottomOf="@+id/learnMoreBtn"
+        app:layout_constraintVertical_bias="0.187" />
 
     <ImageView
         android:id="@+id/halfmoon"
         android:layout_width="wrap_content"
         android:layout_height="188dp"
-        android:layout_marginBottom="130dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintBottom_toTopOf="@+id/learnMoreBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/halfmoon" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/the_moon"
+        android:fontFamily="Montserrat-Medium"
+        android:textAlignment="center"
+        android:textColor="@color/colorYe"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/halfmoon"
+        app:layout_constraintVertical_bias="0.051" />
 
 </android.support.constraint.ConstraintLayout>
