@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToSecondActivity() {
-        Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
+        Intent startIntent = new Intent(getApplicationContext(), MapsActivity.class);
         startActivity(startIntent);
     }
 }
