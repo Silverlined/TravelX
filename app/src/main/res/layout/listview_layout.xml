@@ -3,29 +3,64 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/destinationView"
-        android:layout_width="71dp"
-        android:layout_height="37dp"
+        android:id="@+id/border"
+        android:layout_width="306dp"
+        android:layout_height="47dp"
+        android:layout_alignBottom="@+id/departure"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="35dp"
-        android:text="Destination" />
+        android:layout_marginStart="20dp"
+        android:background="@drawable/border_back" />
 
     <TextView
-        android:id="@+id/departureView"
-        android:layout_width="wrap_content"
+        android:id="@+id/destinationView"
+        android:layout_width="164dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/destinationView"
-        android:layout_below="@+id/destinationView"
-        android:text="Departure" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@string/font"
+        android:text="Destination"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/daysView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/departure"
+        android:layout_toEndOf="@+id/departure"
+        android:fontFamily="@string/font"
+        android:text="days"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/distanceVIew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/destinationView"
+        android:layout_alignParentTop="true"
         android:layout_marginEnd="66dp"
-        android:text="Distance" />
+        android:layout_marginTop="49dp"
+        android:fontFamily="@string/font"
+        android:text="Distance"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/departure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/destinationView"
+        android:layout_below="@+id/destinationView"
+        android:textSize="16sp"
+        android:fontFamily="@string/font"
+        android:text="Departure"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite" />
+
 </RelativeLayout>

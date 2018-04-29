@@ -5,15 +5,17 @@
     <string name="learn_more">LEARN MORE</string>
     <string name="travel">Travel</string>
     <string name="the_moon">THE MOON</string>
+    <string name="font">Montserrat-Medium</string>
 
     <string name="departure">Departs:</string>
+    <string name="aircraft_stations">AIRCRAFT STATIONS</string>
 
     <string-array name="destinations">
         <item>California</item>
         <item>Washington</item>
         <item>Moscow</item>
         <item>Sydney</item>
-        <item>IT-Center-Vratsa</item>
+        <item>IT Center Vratsa</item>
         <item>Hong Kong</item>
     </string-array>
 

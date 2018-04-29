@@ -13,11 +13,13 @@ public class ItemAdapter extends BaseAdapter {
     private String[] destinations;
     private String[] departures;
     private String[] distances;
+    private String departureStr;
 
-    public ItemAdapter(Context c, String[] destinations, String[] departures, String[] distance) {
+    public ItemAdapter(Context c, String[] destinations, String[] departures, String[] distance, String departureStr) {
         this.destinations = destinations;
         this.departures = departures;
         this.distances = distance;
+        this.departureStr = departureStr;
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -40,16 +42,18 @@ public class ItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = mInflater.inflate(R.layout.listview_layout, null);
         TextView destinationView = view.findViewById(R.id.destinationView);
-        TextView departureView = view.findViewById(R.id.departureView);
+        TextView daysView = view.findViewById(R.id.daysView);
         TextView distanceView = view.findViewById(R.id.distanceVIew);
+        TextView departureView = view.findViewById(R.id.departure);
 
         String destination = destinations[position];
         String departure = departures[position];
         String distance = distances[position];
 
         destinationView.setText(destination);
-        departureView.setText(departure);
+        daysView.setText(departure);
         distanceView.setText(distance);
+        departureView.setText(departureStr);
 
         return view;
     }
