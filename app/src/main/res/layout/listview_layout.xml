@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/destinationView"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="35dp"
+        android:text="Destination" />
+
+    <TextView
+        android:id="@+id/departureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/destinationView"
+        android:layout_below="@+id/destinationView"
+        android:text="Departure" />
+
+    <TextView
+        android:id="@+id/distanceVIew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/destinationView"
+        android:layout_marginEnd="66dp"
+        android:text="Distance" />
+</RelativeLayout>

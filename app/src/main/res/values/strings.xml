@@ -5,4 +5,33 @@
     <string name="learn_more">LEARN MORE</string>
     <string name="travel">Travel</string>
     <string name="the_moon">THE MOON</string>
+
+    <string name="departure">Departs:</string>
+
+    <string-array name="destinations">
+        <item>California</item>
+        <item>Washington</item>
+        <item>Moscow</item>
+        <item>Sydney</item>
+        <item>IT-Center-Vratsa</item>
+        <item>Hong Kong</item>
+    </string-array>
+
+    <string-array name="departures">
+        <item>in 3 days</item>
+        <item>in 4 days</item>
+        <item>in 20 days</item>
+        <item>in 23 days</item>
+        <item>in 24 days</item>
+        <item>in 40 days</item>
+    </string-array>
+
+    <string-array name="distance">
+        <item>km</item>
+        <item>km</item>
+        <item>km</item>
+        <item>km</item>
+        <item>km</item>
+        <item>km</item>
+    </string-array>
 </resources>
