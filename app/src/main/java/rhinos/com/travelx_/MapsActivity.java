@@ -3,6 +3,7 @@ package rhinos.com.travelx_;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -24,6 +25,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private static final int MY_REQUEST_INT = 177;
     private GoogleMap mMap;
+    private int chosenDestination;
+    private LatLng destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Intent in = getIntent();
+        chosenDestination = in.getIntExtra("rhinos.com.travelx_.ITEM_INDEX", - 1);
     }
 
 
@@ -57,26 +62,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
             mMap.setMyLocationEnabled(true);
 
-            moveCameraToCurrentLocation();
+            destination = addMarkers();
 
-            addMarkers();
+            moveCameraToChosenLocation();
         }
     }
 
-    private void addMarkers() {
+    private LatLng addMarkers() {
         LatLng sydney = new LatLng(-34, 151);
         LatLng california = new LatLng(36.778259, -119.417931);
-        LatLng washington = new LatLng(47.655548, -122.303200);
+        LatLng oxford = new LatLng(51.752022, -1.257677);
         LatLng moscow = new LatLng(55.751244, 37.618423);
         LatLng hongKong = new LatLng(22.28552, 114.15769);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.addMarker(new MarkerOptions().position(california).title("California"));
-        mMap.addMarker(new MarkerOptions().position(washington).title(""));
+        mMap.addMarker(new MarkerOptions().position(oxford).title(""));
         mMap.addMarker(new MarkerOptions().position(moscow).title(""));
         mMap.addMarker(new MarkerOptions().position(hongKong).title(""));
+
+        switch (chosenDestination) {
+            case 0:
+                return california;
+            case 1:
+                return oxford;
+            case 2:
+                return moscow;
+            case 3:
+                return sydney;
+            case 4:
+                return hongKong;
+            case 5:
+                return null;
+        }
+        return null;
     }
 
-    private void moveCameraToCurrentLocation() {
+    private void moveCameraToChosenLocation() {
         LocationManager manager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         Criteria mCriteria = new Criteria();
         assert manager != null;
@@ -89,8 +110,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             final double currentLongitude = mLocation.getLongitude();
             LatLng loc1 = new LatLng(currentLatitude, currentLongitude);
             mMap.addMarker(new MarkerOptions().position(loc1).title("Your Current Location"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 15));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(2), 2000, null);
+            if (destination == null) {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 15));
+            } else {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(destination, 15));
+            }
+            mMap.animateCamera(CameraUpdateFactory.zoomTo(3), 2000, null);
         }
     }
 
