@@ -18,6 +18,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -37,7 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         Intent in = getIntent();
-        chosenDestination = in.getIntExtra("rhinos.com.travelx_.ITEM_INDEX", - 1);
+        chosenDestination = in.getIntExtra("rhinos.com.travelx_.ITEM_INDEX", -1);
     }
 
 
@@ -68,32 +69,45 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private LatLng addMarkers() {
-        LatLng sydney = new LatLng(-34, 151);
+        LatLng kennedy = new LatLng(28.6050359132,  -80.6026042562);
         LatLng california = new LatLng(36.778259, -119.417931);
-        LatLng oxford = new LatLng(51.752022, -1.257677);
-        LatLng moscow = new LatLng(55.751244, 37.618423);
-        LatLng hongKong = new LatLng(22.28552, 114.15769);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(california).title("California"));
-        mMap.addMarker(new MarkerOptions().position(oxford).title(""));
-        mMap.addMarker(new MarkerOptions().position(moscow).title(""));
-        mMap.addMarker(new MarkerOptions().position(hongKong).title(""));
-
+        LatLng kourou = new LatLng(5.16281, -52.64265);
+        LatLng vandenberg = new LatLng(34.633, -120.613);
+        LatLng baikonur = new LatLng(45.965, 63.305);
+        addMarkers(kennedy, california, kourou, vandenberg, baikonur);
         switch (chosenDestination) {
             case 0:
                 return california;
             case 1:
-                return oxford;
+                return kourou;
             case 2:
-                return moscow;
+                return vandenberg;
             case 3:
-                return sydney;
+                return kennedy;
             case 4:
-                return hongKong;
+                return baikonur;
             case 5:
                 return null;
         }
         return null;
+    }
+
+    private void addMarkers(LatLng kennedy, LatLng california, LatLng kourou, LatLng vandenberg, LatLng baikour) {
+        mMap.addMarker(new MarkerOptions().position(kennedy)
+                .title("Kennedy Cosmodrome")
+                .snippet("Launches 59"));
+        mMap.addMarker(new MarkerOptions().position(california)
+                .title("Elon Musk's HQ")
+                .snippet("Rocket Rd, Hawthorne, CA 90250, USA"));
+        mMap.addMarker(new MarkerOptions().position(kourou)
+                .title("Kourou Cosmodrome")
+                .snippet("Oxford OX1 2JD, The Great Britain"));
+        mMap.addMarker(new MarkerOptions().position(vandenberg)
+                .title("Vandenberg")
+                .snippet("Tsverkaia st., 26/1, Moscow, Russia, 125009"));
+        mMap.addMarker(new MarkerOptions().position(baikour)
+                .title("Hong Kong")
+                .snippet("64 Mody Rd, Tsim Sha Tsui East, Hong Kong"));
     }
 
     private void moveCameraToChosenLocation() {
@@ -108,7 +122,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             final double currentLatitude = mLocation.getLatitude();
             final double currentLongitude = mLocation.getLongitude();
             LatLng loc1 = new LatLng(currentLatitude, currentLongitude);
-            mMap.addMarker(new MarkerOptions().position(loc1).title("Your Current Location"));
+            mMap.addMarker(new MarkerOptions().position(loc1).title("Your Current Location").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
             if (destination == null) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 15));
             } else {
