@@ -8,7 +8,9 @@ import android.view.View;
 import rhinos.com.travelx_.databinding.ActivityDestinationBinding;
 
 public class DestinationActivity extends AppCompatActivity {
+
     private ActivityDestinationBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

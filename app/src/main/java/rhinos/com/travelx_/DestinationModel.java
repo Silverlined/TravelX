@@ -4,14 +4,13 @@ import java.io.Serializable;
 
 class DestinationModel implements Serializable {
     private String name;
+    private int image;
 
     public int getImage() {
         return image;
     }
 
-    private int image;
-
-    public DestinationModel(String name, int image) {
+    DestinationModel(String name, int image) {
         this.name = name;
         this.image = image;
     }

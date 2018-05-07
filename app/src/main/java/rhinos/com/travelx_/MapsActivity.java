@@ -48,7 +48,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.ACCESS_FINE_LOCATION}, MY_REQUEST_INT);
-            return;
         } else {
             mMap.setMyLocationEnabled(true);
 
@@ -91,13 +90,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .snippet("Rocket Rd, Hawthorne, CA 90250, USA"));
         mMap.addMarker(new MarkerOptions().position(kourou)
                 .title("Kourou Cosmodrome")
-                .snippet("Oxford OX1 2JD, The Great Britain"));
+                .snippet(""));
         mMap.addMarker(new MarkerOptions().position(vandenberg)
-                .title("Vandenberg")
-                .snippet("Tsverkaia st., 26/1, Moscow, Russia, 125009"));
+                .title("Vandenberg Cosmodrome")
+                .snippet("Launches 163"));
         mMap.addMarker(new MarkerOptions().position(baikour)
-                .title("Hong Kong")
-                .snippet("64 Mody Rd, Tsim Sha Tsui East, Hong Kong"));
+                .title("Baikour Cosmodrome")
+                .snippet(""));
     }
 
     private void moveCameraToChosenLocation() {
