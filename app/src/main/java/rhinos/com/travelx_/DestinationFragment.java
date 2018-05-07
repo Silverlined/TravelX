@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 import rhinos.com.travelx_.databinding.FragmentDestinationBinding;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DestinationFragment extends Fragment {
 
     private FragmentDestinationBinding binding;
@@ -24,7 +21,7 @@ public class DestinationFragment extends Fragment {
     private DestinationModel destinationModel;
 
     public DestinationFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
